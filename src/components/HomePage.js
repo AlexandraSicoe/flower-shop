@@ -1,8 +1,12 @@
 import { Grid } from "@mui/joy";
 import Typography from "@mui/joy/Typography";
+import React from "react";
 import FlowerCard from "./FlowerCard";
-import flowersData from "../data/flowers.json";
+import flowers from "../data/flowers.json";
 const HomePage = () => {
+  {
+    flowers;
+  }
   return (
     <Grid
       container
