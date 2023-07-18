@@ -1,12 +1,12 @@
 import { Grid } from "@mui/joy";
 import Typography from "@mui/joy/Typography";
 import React from "react";
+import flowersData from "../data/flowers.json";
 import FlowerCard from "./FlowerCard";
-import flowers from "../data/flowers.json";
 const HomePage = () => {
-  {
-    flowers;
-  }
+  const { flowers } = flowersData;
+  console.log(flowers);
+
   return (
     <Grid
       container
@@ -28,7 +28,17 @@ const HomePage = () => {
       >
         Flower Bits
       </Typography>
-      <FlowerCard />
+      <Grid>
+        {flowers.map((flower, index) => {
+          return (
+            <FlowerCard
+              name={flower.name}
+              image={flower.image}
+              price={flower.price}
+            />
+          );
+        })}
+      </Grid>
     </Grid>
   );
 };

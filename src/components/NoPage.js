@@ -27,7 +27,7 @@ const NoPage = () => {
       >
         Error 404. Flowers not found.
       </Typography>
-      <Link>
+      <Link to="/">
         <Button sx={{ fontSize: "15px", marginTop: "20px" }}>Return</Button>
       </Link>
     </Grid>
