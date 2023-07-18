@@ -16,8 +16,7 @@ const HomePage = () => {
       height="100%"
       style={{
         backgroundColor: "white	",
-        width: "100vw",
-        height: "100vh",
+        paddingTop: "10px",
       }}
     >
       <Typography
@@ -28,7 +27,10 @@ const HomePage = () => {
       >
         Flower Bits
       </Typography>
-      <Grid>
+      <Grid
+        container
+        sx={{ flexGrow: 1, marginTop: "15px", marginBottom: "15px" }}
+      >
         {flowers.map((flower, index) => {
           return (
             <FlowerCard
