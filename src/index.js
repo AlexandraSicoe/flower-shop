@@ -88,11 +88,10 @@ const theme = extendTheme({
   },
 });
 root.render(
-  <React.StrictMode>
-    <CssVarsProvider theme={theme}>
-      <App />
-    </CssVarsProvider>
-  </React.StrictMode>
+  // <React.StrictMode>
+  <CssVarsProvider theme={theme}>
+    <App />
+  </CssVarsProvider>
 );
 
 reportWebVitals();

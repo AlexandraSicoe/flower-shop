@@ -1,14 +1,17 @@
 import { Grid } from "@mui/joy";
 import Typography from "@mui/joy/Typography";
-import React from "react";
+import React, { useState } from "react";
 import flowersData from "../data/flowers.json";
 import FlowerCard from "./FlowerCard";
+
 const HomePage = () => {
   const { flowers } = flowersData;
-  console.log(flowers);
-
+  // console.log("flowers", flowers);
+  const [cart, setCart] = useState([]);
+  console.log("cart", cart);
   return (
     <Grid
+      xs={8}
       container
       justifyContent="center"
       direction="column"
@@ -17,13 +20,15 @@ const HomePage = () => {
       style={{
         backgroundColor: "white	",
         paddingTop: "10px",
+        margin: "auto",
       }}
     >
+      <nav> </nav>
       <Typography
         level="h1"
         textAlign="center"
         textColor="#FAA0A0"
-        sx={{ fontFamily: "Fasthand", fontSize: "100px" }}
+        sx={{ fontFamily: "Fasthand" }}
       >
         Flower Bits
       </Typography>
@@ -32,13 +37,7 @@ const HomePage = () => {
         sx={{ flexGrow: 1, marginTop: "15px", marginBottom: "15px" }}
       >
         {flowers.map((flower, index) => {
-          return (
-            <FlowerCard
-              name={flower.name}
-              image={flower.image}
-              price={flower.price}
-            />
-          );
+          return <FlowerCard flower={flower} cart={cart} setCart={setCart} />;
         })}
       </Grid>
     </Grid>
