@@ -11,7 +11,7 @@ const HomePage = () => {
   console.log("cart", cart);
   return (
     <>
-      <Navbar />
+      <Navbar cart={cart} />
       <Grid
         xs={12}
         sm={8}
