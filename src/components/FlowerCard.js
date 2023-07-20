@@ -21,7 +21,12 @@ const FlowerCard = ({ flower, cart, setCart }) => {
     >
       <Card
         component="li"
-        sx={{ width: 300, height: 400, marginRight: "15px" }}
+        sx={{
+          width: { xs: "100%", sm: 300 },
+          height: { xs: 200, sm: 400 },
+          marginRight: "15px",
+          marginLeft: "15px",
+        }}
       >
         <CardCover>
           <img src={flower.image}></img>
