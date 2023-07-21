@@ -6,19 +6,22 @@ import { useEffect, useState } from "react";
 const Navbar = ({ cart }) => {
   const [totalPrice, setTotalPrice] = useState(0); //cand schimbam un state nu avem =.
   // const [totalFlowers, setTotalFlowers] = useState("");
-  // useEffect(() => {
+  // if(cart) {useEffect(() => {
   //   let flowerSum = "";
   //   cart.forEach((flower) => {
   //     flowerSum = flowerSum + flower.name + ", ";
   //   });
   //   setTotalFlowers(flowerSum);
-  // }, [cart]);
+  // }, [cart]);}
+
   useEffect(() => {
-    let sum = 0;
-    cart.forEach((flower) => {
-      sum = sum + flower.price;
-    });
-    setTotalPrice(sum);
+    if (cart) {
+      let sum = 0;
+      cart.forEach((flower) => {
+        sum = sum + flower.price;
+      });
+      setTotalPrice(sum);
+    }
   }, [cart]);
 
   return (
@@ -46,7 +49,7 @@ const Navbar = ({ cart }) => {
           justifyContent: "space-between",
         }}
       >
-        {/* {totalFlowers.length > 0 && (
+        {/* {totalFlowers?.length > 0 && (
           <div
             style={{
               backgroundColor: "white",
@@ -89,7 +92,7 @@ const Navbar = ({ cart }) => {
           <Button size="md" sx={{ fontSize: "20px" }}>
             <ion-icon name="cart"></ion-icon>
           </Button>
-          {cart.length > 0 && (
+          {cart?.length > 0 && (
             <div
               style={{
                 position: "absolute",
@@ -107,7 +110,7 @@ const Navbar = ({ cart }) => {
               }}
             >
               <Typography sx={{ color: "white" }} level="body2">
-                {cart.length}
+                {cart?.length}
               </Typography>
             </div>
           )}
