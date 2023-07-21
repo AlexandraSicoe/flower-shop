@@ -2,12 +2,11 @@ import { CssVarsProvider, extendTheme } from "@mui/joy/styles";
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Cart from "./components/Cart";
+import Checkout from "./components/Checkout";
 import HomePage from "./components/HomePage";
 import Layout from "./components/Layout";
 import NoPage from "./components/NoPage";
 import "./index.css";
-import OrderForm from "./components/OrderForm";
 import reportWebVitals from "./reportWebVitals";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
@@ -17,8 +16,7 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Layout />} />
         <Route index element={<HomePage />} />
-        <Route path="cart-page" element={<Cart />} />
-        <Route path="order-form" element={<OrderForm />} />
+        <Route path="checkout-page" element={<Checkout />} />
         <Route path="*" element={<NoPage />} />
       </Routes>
     </BrowserRouter>
