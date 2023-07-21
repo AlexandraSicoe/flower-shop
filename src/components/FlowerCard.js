@@ -1,4 +1,3 @@
-import Add from "@mui/icons-material/Add";
 import Box from "@mui/joy/Box";
 import Button from "@mui/joy/Button";
 import Card from "@mui/joy/Card";
@@ -73,14 +72,12 @@ const FlowerCard = ({ flower, cart, setCart }) => {
             >
               <Button
                 size="sm"
-                startDecorator={<Add />}
                 onClick={() => {
-                  // console.log("test button meow");
                   setCart([...cart, flower]); // face un array nou compus din destructurarea lui cart, adica cart curent inainte sa adaugam caruia ii adauga obiectul flower on click,  the spread operator (...) is used to create a new array. It takes the current contents of the cart array and adds the flower object to the end of it.
                   console.log(...cart);
                 }}
               >
-                <Typography level="body2" sx={{ color: "white" }}>
+                <Typography level="body3" sx={{ color: "white" }}>
                   Add to cart
                 </Typography>
               </Button>
