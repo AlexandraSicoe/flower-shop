@@ -4,7 +4,15 @@ import Button from "@mui/joy/Button";
 import { useEffect, useState } from "react";
 
 const Navbar = ({ cart }) => {
-  const [totalPrice, setTotalPrice] = useState(0); //cand schimbam un state nu avem =
+  const [totalPrice, setTotalPrice] = useState(0); //cand schimbam un state nu avem =.
+  // const [totalFlowers, setTotalFlowers] = useState("");
+  // useEffect(() => {
+  //   let flowerSum = "";
+  //   cart.forEach((flower) => {
+  //     flowerSum = flowerSum + flower.name + ", ";
+  //   });
+  //   setTotalFlowers(flowerSum);
+  // }, [cart]);
   useEffect(() => {
     let sum = 0;
     cart.forEach((flower) => {
@@ -35,8 +43,24 @@ const Navbar = ({ cart }) => {
         style={{
           display: "flex",
           alignItems: "center",
+          justifyContent: "space-between",
         }}
       >
+        {/* {totalFlowers.length > 0 && (
+          <div
+            style={{
+              backgroundColor: "white",
+              height: "40px",
+              display: "flex",
+              alignItems: "center",
+              marginRight: "10px",
+              padding: "5px",
+            }}
+          >
+            {totalFlowers}
+          </div>
+        )} */}
+
         <div
           style={{
             backgroundColor: "white",
