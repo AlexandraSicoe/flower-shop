@@ -34,16 +34,19 @@ const Navbar = ({ cart }) => {
       alignItems="center"
       sx={{ backgroundColor: "black", p: 3 }}
     >
+      <Link to={"/"}>
       <Typography
-        textAlign="center"
-        textColor="#FAA0A0"
-        sx={{
-          fontFamily: "Fasthand",
-          fontSize: { xs: "25px" },
-        }}
-      >
-        Flower Bits
-      </Typography>
+      textAlign="center"
+      textColor="#FAA0A0"
+      sx={{
+        fontFamily: "Fasthand",
+        fontSize: { xs: "25px" },
+      }}
+    >
+      Flower Bits
+    </Typography>
+      </Link>
+      
       <div
         style={{
           display: "flex",
