@@ -6,6 +6,7 @@ import Checkout from "./components/Checkout";
 import HomePage from "./components/HomePage";
 import Layout from "./components/Layout";
 import NoPage from "./components/NoPage";
+import CheckoutCard from "./components/CheckoutCard"
 import "./index.css";
 import reportWebVitals from "./reportWebVitals";
 const root = ReactDOM.createRoot(document.getElementById("root"));
@@ -17,6 +18,8 @@ const App = () => {
         <Route path="/" element={<Layout />} />
         <Route index element={<HomePage />} />
         <Route path="checkout-page" element={<Checkout />} />
+        <Route path="checkout-card" element={<CheckoutCard/>} />
+
         <Route path="*" element={<NoPage />} />
       </Routes>
     </BrowserRouter>

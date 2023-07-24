@@ -1,6 +1,6 @@
 import { Grid } from "@mui/joy";
-import Typography from "@mui/joy/Typography";
 import Button from "@mui/joy/Button";
+import Typography from "@mui/joy/Typography";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
