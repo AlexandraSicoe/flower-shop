@@ -2,6 +2,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Belanosima:wght@400;600;700&display=swap");
 body {
   margin: 0;
+  background-color: #f2d4d4;
 }
 
 @tailwind base;
