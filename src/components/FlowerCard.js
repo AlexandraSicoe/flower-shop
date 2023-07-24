@@ -16,7 +16,7 @@ const FlowerCard = ({ flower, cart, setCart }) => {
       lg={4}
       xl={3}
       justifyContent="center"
-      sx={{ p: 2 }}
+      sx={{ p: 1 }}
     >
       <Card
         component="li"
@@ -54,10 +54,10 @@ const FlowerCard = ({ flower, cart, setCart }) => {
             }}
           >
             <div>
-              <Typography level="h4" sx={{ color: "white" }}>
+              <Typography level="h6" sx={{ color: "white" }}>
                 {flower.name}
               </Typography>
-              <Typography level="h5" sx={{ color: "white" }}>
+              <Typography level="h6" sx={{ color: "white" }}>
                 {flower.price} RON
               </Typography>
             </div>
