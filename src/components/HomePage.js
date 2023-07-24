@@ -21,7 +21,6 @@ const HomePage = () => {
         alignItems="center"
         height="100%"
         style={{
-          	
           paddingTop: "10px",
           margin: "auto",
         }}
