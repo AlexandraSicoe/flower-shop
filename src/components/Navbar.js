@@ -2,6 +2,8 @@ import { Grid } from "@mui/joy";
 import Typography from "@mui/joy/Typography";
 import Button from "@mui/joy/Button";
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+
 
 const Navbar = ({ cart }) => {
   const [totalPrice, setTotalPrice] = useState(0); //cand schimbam un state nu avem =.
@@ -89,9 +91,11 @@ const Navbar = ({ cart }) => {
             position: "relative",
           }}
         >
+          <Link to={"/checkout-page"}>
           <Button size="md" sx={{ fontSize: "20px" }}>
             <ion-icon name="cart"></ion-icon>
-          </Button>
+          </Button></Link>
+          
           {cart?.length > 0 && (
             <div
               style={{
