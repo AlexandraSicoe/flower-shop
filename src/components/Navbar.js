@@ -4,28 +4,7 @@ import Typography from "@mui/joy/Typography";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
-
-const Navbar = ({ cart }) => {
-  const [totalPrice, setTotalPrice] = useState(0); //cand schimbam un state nu avem =.
-  // const [totalFlowers, setTotalFlowers] = useState("");
-  // if(cart) {useEffect(() => {
-  //   let flowerSum = "";
-  //   cart.forEach((flower) => {
-  //     flowerSum = flowerSum + flower.name + ", ";
-  //   });
-  //   setTotalFlowers(flowerSum);
-  // }, [cart]);}
-
-  useEffect(() => {
-    if (cart) {
-      let sum = 0;
-      cart.forEach((flower) => {
-        sum = sum + flower.price;
-      });
-      setTotalPrice(sum);
-    }
-  }, [cart]);
-
+const Navbar = ({ cart, totalPrice }) => {
   return (
     <Grid
       xs={12}
@@ -35,18 +14,18 @@ const Navbar = ({ cart }) => {
       sx={{ backgroundColor: "black", p: 3 }}
     >
       <Link to={"/"}>
-      <Typography
-      textAlign="center"
-      textColor="#FAA0A0"
-      sx={{
-        fontFamily: "Fasthand",
-        fontSize: { xs: "25px" },
-      }}
-    >
-      Flower Bits
-    </Typography>
+        <Typography
+          textAlign="center"
+          textColor="#FAA0A0"
+          sx={{
+            fontFamily: "Fasthand",
+            fontSize: { xs: "25px" },
+          }}
+        >
+          Flower Bits
+        </Typography>
       </Link>
-      
+
       <div
         style={{
           display: "flex",
@@ -95,10 +74,11 @@ const Navbar = ({ cart }) => {
           }}
         >
           <Link to={"/checkout-page"}>
-          <Button size="md" sx={{ fontSize: "20px" }}>
-            <ion-icon name="cart"></ion-icon>
-          </Button></Link>
-          
+            <Button size="md" sx={{ fontSize: "20px" }}>
+              <ion-icon name="cart"></ion-icon>
+            </Button>
+          </Link>
+
           {cart?.length > 0 && (
             <div
               style={{
