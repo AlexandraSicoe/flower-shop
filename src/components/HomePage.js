@@ -1,13 +1,20 @@
 import { Grid } from "@mui/joy";
-import React, { useState } from "react";
 import flowersData from "../data/flowers.json";
 import FlowerCard from "./FlowerCard";
 import Navbar from "./Navbar";
+import React, { useState, useEffect } from "react";
 
 const HomePage = () => {
   const { flowers } = flowersData;
   // console.log("flowers", flowers);
   const [cart, setCart] = useState([]);
+  useEffect(() => {
+    let lsCart = localStorage.getItem("cart");
+    if (lsCart) {
+      lsCart = JSON.parse(lsCart);
+      setCart(lsCart);
+    }
+  }, []);
   console.log("cart", cart);
   return (
     <>

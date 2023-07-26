@@ -3,15 +3,15 @@ import CheckoutCard from "./CheckoutCard";
 import Navbar from "./Navbar";
 import React, { useState, useEffect } from "react";
 
-
 const Checkout = () => {
   const [cart, setCart] = useState([]);
-useEffect(() => {
-  
-let lsCart=localStorage.getItem("cart")
-lsCart=JSON.parse(lsCart)
-setCart(lsCart)
-}, [])
+  useEffect(() => {
+    let lsCart = localStorage.getItem("cart");
+    if (lsCart) {
+      lsCart = JSON.parse(lsCart);
+      setCart(lsCart);
+    }
+  }, []);
 
   return (
     <>
