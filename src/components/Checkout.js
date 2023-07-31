@@ -12,18 +12,19 @@ const Checkout = () => {
   useEffect(() => {
     let lsCart = localStorage.getItem("cart");
     lsCart = JSON.parse(lsCart);
-    setCart(lsCart);
+    setCart(lsCart ? lsCart : []);
   }, []);
+
   useEffect(() => {
     if (cart) {
       let sum = 0;
-      cart.forEach((flower) => {
+      cart?.forEach((flower) => {
         sum = sum + flower.price;
       });
       setTotalSum(sum);
     }
   }, [cart]);
-  useEffect(() => {}, []);
+
   return (
     <>
       <Navbar />
@@ -59,7 +60,8 @@ const Checkout = () => {
             size="md"
             sx={{ fontSize: "20px" }}
             onClick={() => {
-              localStorage.clear();
+              localStorage.setItem("cart", "[]");
+              navigate("/");
             }}
           >
             Finalizeaza comanda

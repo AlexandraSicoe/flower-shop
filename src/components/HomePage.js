@@ -1,14 +1,26 @@
 import { Grid } from "@mui/joy";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import flowersData from "../data/flowers.json";
 import FlowerCard from "./FlowerCard";
 import Navbar from "./Navbar";
 
 const HomePage = () => {
   const { flowers } = flowersData;
-  // console.log("flowers", flowers);
   const [cart, setCart] = useState([]);
-  console.log("cart", cart);
+
+  useEffect(() => {
+    let lsCart = localStorage.getItem("cart");
+    lsCart = JSON.parse(lsCart);
+    setCart(lsCart ? lsCart : []);
+    // same as below
+    // if(lsCart != null) {
+    //   setCart(lsCart);
+    // }
+    // else {
+    //   setCart([]);
+    // }
+  }, []);
+
   return (
     <>
       <Navbar cart={cart} />
@@ -30,7 +42,14 @@ const HomePage = () => {
           sx={{ flexGrow: 1, marginTop: "15px", marginBottom: "15px" }}
         >
           {flowers.map((flower, index) => {
-            return <FlowerCard flower={flower} cart={cart} setCart={setCart} />;
+            return (
+              <FlowerCard
+                key={index}
+                flower={flower}
+                cart={cart}
+                setCart={setCart}
+              />
+            );
           })}
         </Grid>
       </Grid>

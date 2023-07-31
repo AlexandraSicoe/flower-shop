@@ -18,7 +18,7 @@ const Navbar = ({ cart }) => {
   useEffect(() => {
     if (cart) {
       let sum = 0;
-      cart.forEach((flower) => {
+      cart?.forEach((flower) => {
         sum = sum + flower.price;
       });
       setTotalPrice(sum);
