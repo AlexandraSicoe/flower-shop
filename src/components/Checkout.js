@@ -53,7 +53,7 @@ const Checkout = () => {
               sx={{ color: "black", p: 2, backgroundColor: "primary" }}
               level="body2"
             >
-              Your total sum is: {totalSum} RON
+              Totalul dvs. este de: {totalSum} RON
             </Typography>
           </Box>
           <Button
