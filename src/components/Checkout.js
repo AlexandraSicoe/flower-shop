@@ -6,27 +6,15 @@ import { useNavigate } from "react-router-dom";
 
 const Checkout = () => {
   const [cart, setCart] = useState([]);
-  const [totalSum, setTotalSum] = useState(0);
-  const navigate = useNavigate();
-
   useEffect(() => {
     let lsCart = localStorage.getItem("cart");
     lsCart = JSON.parse(lsCart);
     setCart(lsCart);
   }, []);
-  useEffect(() => {
-    if (cart) {
-      let sum = 0;
-      cart.forEach((flower) => {
-        sum = sum + flower.price;
-      });
-      setTotalSum(sum);
-    }
-  }, [cart]);
-  useEffect(() => {}, []);
+
   return (
     <>
-      <Navbar />
+      <Navbar totalPrice={totalPrice} cart={cart} />
 
       <Grid
         xs={12}
