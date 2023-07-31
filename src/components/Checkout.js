@@ -6,15 +6,27 @@ import { useNavigate } from "react-router-dom";
 
 const Checkout = () => {
   const [cart, setCart] = useState([]);
+  const [totalSum, setTotalSum] = useState(0);
+  const navigate = useNavigate();
+
   useEffect(() => {
     let lsCart = localStorage.getItem("cart");
     lsCart = JSON.parse(lsCart);
     setCart(lsCart);
   }, []);
-
+  useEffect(() => {
+    if (cart) {
+      let sum = 0;
+      cart.forEach((flower) => {
+        sum = sum + flower.price;
+      });
+      setTotalSum(sum);
+    }
+  }, [cart]);
+  useEffect(() => {}, []);
   return (
     <>
-      <Navbar totalPrice={totalPrice} cart={cart} />
+      <Navbar />
 
       <Grid
         xs={12}
@@ -48,7 +60,6 @@ const Checkout = () => {
             sx={{ fontSize: "20px" }}
             onClick={() => {
               localStorage.clear();
-              useNavigate("/");
             }}
           >
             Finalizeaza comanda
