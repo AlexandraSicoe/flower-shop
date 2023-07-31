@@ -73,7 +73,10 @@ const FlowerCard = ({ flower, cart, setCart }) => {
               <Button
                 size="sm"
                 onClick={() => {
-                  localStorage.setItem("cart",JSON.stringify([...cart, flower] ))
+                  localStorage.setItem(
+                    "cart",
+                    JSON.stringify([...cart, flower])
+                  );
                   setCart([...cart, flower]); // face un array nou compus din destructurarea lui cart, adica cart curent inainte sa adaugam caruia ii adauga obiectul flower on click,  the spread operator (...) is used to create a new array. It takes the current contents of the cart array and adds the flower object to the end of it.
                   console.log(...cart);
                 }}

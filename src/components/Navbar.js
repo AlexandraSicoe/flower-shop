@@ -1,9 +1,8 @@
-import { Grid } from "@mui/joy";
+import { Box, Grid } from "@mui/joy";
 import Button from "@mui/joy/Button";
 import Typography from "@mui/joy/Typography";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-
 
 const Navbar = ({ cart }) => {
   const [totalPrice, setTotalPrice] = useState(0); //cand schimbam un state nu avem =.
@@ -35,18 +34,18 @@ const Navbar = ({ cart }) => {
       sx={{ backgroundColor: "black", p: 3 }}
     >
       <Link to={"/"}>
-      <Typography
-      textAlign="center"
-      textColor="#FAA0A0"
-      sx={{
-        fontFamily: "Fasthand",
-        fontSize: { xs: "25px" },
-      }}
-    >
-      Flower Bits
-    </Typography>
+        <Typography
+          textAlign="center"
+          textColor="#FAA0A0"
+          sx={{
+            fontFamily: "Fasthand",
+            fontSize: { xs: "25px" },
+          }}
+        >
+          Flower Bits
+        </Typography>
       </Link>
-      
+
       <div
         style={{
           display: "flex",
@@ -69,7 +68,7 @@ const Navbar = ({ cart }) => {
           </div>
         )} */}
 
-        <div
+        <Box
           style={{
             backgroundColor: "white",
             height: "40px",
@@ -83,8 +82,8 @@ const Navbar = ({ cart }) => {
           <Typography sx={{ color: "black" }} level="body1">
             {totalPrice} RON
           </Typography>
-        </div>
-        <div
+        </Box>
+        <Box
           style={{
             display: "flex",
             gap: 2,
@@ -95,10 +94,11 @@ const Navbar = ({ cart }) => {
           }}
         >
           <Link to={"/checkout-page"}>
-          <Button size="md" sx={{ fontSize: "20px" }}>
-            <ion-icon name="cart"></ion-icon>
-          </Button></Link>
-          
+            <Button size="md" sx={{ fontSize: "20px" }}>
+              <ion-icon name="cart"></ion-icon>
+            </Button>
+          </Link>
+
           {cart?.length > 0 && (
             <div
               style={{
@@ -121,7 +121,7 @@ const Navbar = ({ cart }) => {
               </Typography>
             </div>
           )}
-        </div>
+        </Box>
       </div>
     </Grid>
   );
