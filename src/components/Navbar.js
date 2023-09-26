@@ -98,29 +98,6 @@ const Navbar = ({ cart }) => {
               <ion-icon name="cart"></ion-icon>
             </Button>
           </Link>
-
-          {cart?.length > 0 && (
-            <div
-              style={{
-                position: "absolute",
-                backgroundColor: "red",
-                width: "25px",
-                height: "25px",
-                zIndex: 999,
-                top: -10,
-                right: -10,
-                display: "flex",
-                justifyContent: "center",
-                alignItems: "center",
-                borderRadius: "50%",
-                paddingBottom: "2px",
-              }}
-            >
-              <Typography sx={{ color: "white" }} level="body2">
-                {cart?.length}
-              </Typography>
-            </div>
-          )}
         </Box>
       </div>
     </Grid>

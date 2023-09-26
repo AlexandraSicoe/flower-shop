@@ -82,7 +82,7 @@ const FlowerCard = ({ flower, cart, setCart }) => {
                 }}
               >
                 <Typography level="body3" sx={{ color: "white" }}>
-                  Add to cart
+                  Adauga in cos
                 </Typography>
               </Button>
             </Box>
